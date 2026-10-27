@@ -1,0 +1,180 @@
+/* ==========================================================================
+   PostCard Component Styles
+   ========================================================================== */
+
+.post-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease;
+  position: relative;
+  outline: none;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  border-color: #cbd5e1;
+}
+
+.post-card:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+  border-color: #2563eb;
+}
+
+/* Card Header */
+.post-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.post-meta-date {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.meta-icon {
+  font-size: 0.75rem;
+}
+
+/* Category Badges (Pills) */
+.category-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background-color: #f1f5f9;
+  color: #475569;
+}
+
+.badge-technology {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-lifestyle {
+  background-color: #ccfbf1;
+  color: #115e59;
+}
+
+.badge-education {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.badge-health {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.badge-travel {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.badge-food {
+  background-color: #ffedd5;
+  color: #9a3412;
+}
+
+.badge-sports {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-entertainment {
+  background-color: #f3e8ff;
+  color: #6b21a8;
+}
+
+.badge-science {
+  background-color: #ffe4e6;
+  color: #9f1239;
+}
+
+.badge-other {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+/* Card Body */
+.post-card-body {
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.post-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.3px;
+  transition: color 0.15s ease;
+}
+
+.post-card:hover .post-card-title {
+  color: #2563eb;
+}
+
+.post-card-summary {
+  font-size: 0.925rem;
+  color: #64748b;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card Footer */
+.post-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.post-author-info {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.author-icon {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.read-more-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2563eb;
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover .read-more-text {
+  transform: translateX(3px);
+}

@@ -1,0 +1,60 @@
+/* ==========================================================================
+   CSS Reset & Base Global Styles
+   ==========================================================================
+   What is a CSS Reset?
+   Web browsers (such as Chrome, Safari, Firefox, and Edge) come with built-in
+   default styles known as user-agent stylesheets. These defaults often vary
+   between browsers—for example, different margins on body/headers or different
+   box model behaviors.
+
+   A CSS reset strips away these default inconsistencies so that all elements
+   behave predictably across all browsers, providing a clean, unified baseline
+   for our design system.
+   ========================================================================== */
+
+/* 1. Global Box Sizing & Margin/Padding Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Enable Smooth Scrolling for Page Anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 3. Global Typography and Color Foundation */
+body {
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* 4. Layout Spacing Offset for Fixed Navbar */
+main.main-content {
+  padding-top: 64px;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 5. Basic Anchor Link Reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 6. Form Controls Reset */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}

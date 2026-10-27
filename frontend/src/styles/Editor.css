@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Editor Styles (CreatePost & EditPost)
+   ========================================================================== */
+
+.editor-page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+}
+
+/* Header bar */
+.editor-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.editor-heading {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+.status-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  margin-top: 0.4rem;
+}
+
+.status-published {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status-draft {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.preview-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Form inputs */
+.editor-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-title-input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #e2e8f0;
+  border-radius: 0;
+  padding: 0.75rem 0;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  outline: none;
+  font-family: 'Newsreader', 'Georgia', serif, -apple-system, sans-serif;
+  transition: border-color 0.2s ease;
+  background-color: transparent;
+}
+
+.editor-title-input:focus {
+  border-bottom-color: #2563eb;
+}
+
+.editor-title-input::placeholder {
+  color: #cbd5e1;
+}
+
+/* Meta controls (category & counters) */
+.editor-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5rem 0 1rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.category-select-group {
+  margin-bottom: 0;
+  min-width: 220px;
+}
+
+.editor-select {
+  padding: 0.6rem 1rem;
+}
+
+.editor-stats-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.stat-pill {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  background-color: #f1f5f9;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Summary Input & Counter */
+.label-with-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.char-counter {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.char-counter.counter-warning {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.editor-summary-input {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* Content Textarea */
+.editor-content-textarea {
+  min-height: 420px;
+  resize: vertical;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  padding: 1.25rem;
+}
+
+/* Action button bar */
+.editor-actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.action-buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Preview Mode Card */
+.editor-preview-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.preview-watermark {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  background-color: #f1f5f9;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.preview-empty-text {
+  color: #94a3b8;
+  font-style: italic;
+  padding: 2rem 0;
+}
+
+@media (max-width: 640px) {
+  .editor-heading {
+    font-size: 1.75rem;
+  }
+
+  .editor-title-input {
+    font-size: 1.6rem;
+  }
+
+  .editor-actions-bar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .action-buttons-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .action-buttons-group .btn {
+    width: 100%;
+  }
+
+  .editor-preview-card {
+    padding: 2rem 1.25rem;
+  }
+}
