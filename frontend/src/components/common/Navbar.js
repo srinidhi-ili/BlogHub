@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
@@ -5,7 +6,6 @@ import {
   FaTimes,
   FaUserCircle,
   FaPlus,
-  FaThList,
   FaShieldAlt,
   FaSignOutAlt,
   FaChartBar,
@@ -23,11 +23,11 @@ import '../../styles/Navbar.css';
  * Capabilities:
  * - Dynamic links based on authentication and authorization:
  *   * Public: Home, Explore
- *   * Logged-in Users: My Blogs (/my-blogs), Create Post (/create-post)
- *   * Admin Users: Admin Dashboard (/admin)
+ *   * Logged-in Users: Dashboard, Create Post
+ *   * Admin Users: Admin Dashboard
  *   * Unauthenticated: Login, Register
  *   * Authenticated: Username display + Logout button
- * - Active link highlighting managed via React Router's `useLocation()` hook.
+ * - Active link highlighting managed via React Router's useLocation() hook.
  * - Mobile responsive drawer menu with toggle state.
  * ============================================================================
  */
@@ -73,7 +73,11 @@ const Navbar = () => {
           type="button"
           className="mobile-toggle-btn"
           onClick={toggleMenu}
-          aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-label={
+            mobileMenuOpen
+              ? 'Close navigation menu'
+              : 'Open navigation menu'
+          }
           aria-expanded={mobileMenuOpen}
         >
           {mobileMenuOpen ? <FaTimes /> : <FaBars />}
@@ -92,10 +96,13 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
+
             <li>
               <Link
                 to="/explore"
-                className={`nav-link ${isPathActive('/explore') ? 'active' : ''}`}
+                className={`nav-link ${
+                  isPathActive('/explore') ? 'active' : ''
+                }`}
                 onClick={closeMenu}
               >
                 Explore
@@ -108,16 +115,21 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/dashboard"
-                    className={`nav-link ${isPathActive('/dashboard') ? 'active' : ''}`}
+                    className={`nav-link ${
+                      isPathActive('/dashboard') ? 'active' : ''
+                    }`}
                     onClick={closeMenu}
                   >
                     <FaChartBar className="nav-item-icon" /> Dashboard
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     to="/create-post"
-                    className={`nav-link ${isPathActive('/create-post') ? 'active' : ''}`}
+                    className={`nav-link ${
+                      isPathActive('/create-post') ? 'active' : ''
+                    }`}
                     onClick={closeMenu}
                   >
                     <FaPlus className="nav-item-icon" /> Create Post
@@ -131,7 +143,9 @@ const Navbar = () => {
               <li>
                 <Link
                   to="/admin"
-                  className={`nav-link ${isPathActive('/admin') ? 'active' : ''}`}
+                  className={`nav-link ${
+                    isPathActive('/admin') ? 'active' : ''
+                  }`}
                   onClick={closeMenu}
                 >
                   <FaShieldAlt className="nav-item-icon" /> Admin
@@ -144,7 +158,10 @@ const Navbar = () => {
           <div className="navbar-auth">
             {isAuthenticated ? (
               <div className="navbar-user-info">
-                <span className="navbar-username" title={user?.email || displayName}>
+                <span
+                  className="navbar-username"
+                  title={user?.email || displayName}
+                >
                   <FaUserCircle className="user-icon" />
                   <span className="username-text">{displayName}</span>
                   {isAdmin && <span className="admin-pill">Admin</span>}
@@ -157,18 +174,19 @@ const Navbar = () => {
                 >
                   <FaSignOutAlt /> Logout
                 </button>
-
-          </div>
-
+              </div>
             ) : (
               <div className="auth-buttons">
                 <Link
                   to="/login"
-                  className={`btn btn-outline ${isPathActive('/login') ? 'active' : ''}`}
+                  className={`btn btn-outline ${
+                    isPathActive('/login') ? 'active' : ''
+                  }`}
                   onClick={closeMenu}
                 >
                   Login
                 </Link>
+
                 <Link
                   to="/register"
                   className="btn btn-primary"
@@ -176,10 +194,9 @@ const Navbar = () => {
                 >
                   Register
                 </Link>
-
-          </div>
-
+              </div>
             )}
+
             <ThemeToggle />
           </div>
         </div>

@@ -119,16 +119,14 @@ const WriterDashboard = () => {
   }
 
   const {
-    stats,
-    todayCount,
-    thisWeekCount,
-    weeklyActivity,
-    weekComparison,
-    streak,
-    draftAttention,
-    recentArticles,
-    goals,
-  } = data;
+  stats,
+  weeklyActivity,
+  weekComparison,
+  streak,
+  draftAttention,
+  recentArticles,
+  goals,
+} = data;
 
   const displayName = user?.name || user?.username || 'Writer';
 
