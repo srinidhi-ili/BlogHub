@@ -59,11 +59,13 @@ const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
 const commentRoutes = require('./routes/comments');
 const adminRoutes = require('./routes/admin');
+const writerRoutes = require('./routes/writer');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api', commentRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/writer', writerRoutes);
 
 // Step 9: Centralized Error Handler Middleware
 // Must be registered after all route definitions so it catches errors thrown inside them

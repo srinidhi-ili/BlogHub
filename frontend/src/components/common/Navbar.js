@@ -8,7 +8,9 @@ import {
   FaThList,
   FaShieldAlt,
   FaSignOutAlt,
+  FaChartBar,
 } from 'react-icons/fa';
+import ThemeToggle from './ThemeToggle';
 import { useAuth } from '../../context/AuthContext';
 import '../../styles/Navbar.css';
 
@@ -105,11 +107,11 @@ const Navbar = () => {
               <>
                 <li>
                   <Link
-                    to="/my-blogs"
-                    className={`nav-link ${isPathActive('/my-blogs') ? 'active' : ''}`}
+                    to="/dashboard"
+                    className={`nav-link ${isPathActive('/dashboard') ? 'active' : ''}`}
                     onClick={closeMenu}
                   >
-                    <FaThList className="nav-item-icon" /> My Blogs
+                    <FaChartBar className="nav-item-icon" /> Dashboard
                   </Link>
                 </li>
                 <li>
@@ -155,7 +157,9 @@ const Navbar = () => {
                 >
                   <FaSignOutAlt /> Logout
                 </button>
-              </div>
+
+          </div>
+
             ) : (
               <div className="auth-buttons">
                 <Link
@@ -172,8 +176,11 @@ const Navbar = () => {
                 >
                   Register
                 </Link>
-              </div>
+
+          </div>
+
             )}
+            <ThemeToggle />
           </div>
         </div>
       </nav>

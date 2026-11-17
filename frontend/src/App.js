@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/common/Navbar';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import AdminRoute from './components/common/AdminRoute';
@@ -13,6 +14,7 @@ import CreatePost from './pages/CreatePost';
 import EditPost from './pages/EditPost';
 import MyBlogs from './pages/MyBlogs';
 import AdminDashboard from './pages/AdminDashboard';
+import WriterDashboard from './pages/WriterDashboard';
 import NotFound from './pages/NotFound';
 import './styles/Common.css';
 import './App.css';
@@ -30,6 +32,7 @@ import './App.css';
  */
 function App() {
   return (
+    <ThemeProvider>
     <AuthProvider>
       <BrowserRouter>
         <div className="app-layout">
@@ -58,6 +61,14 @@ function App() {
                 }
               />
               <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <WriterDashboard />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
                 path="/my-blogs"
                 element={
                   <ProtectedRoute>
@@ -79,6 +90,7 @@ function App() {
         </div>
       </BrowserRouter>
     </AuthProvider>
+    </ThemeProvider>
   );
 }
 
